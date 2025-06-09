@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Aéreo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎟️ Generar Ticket Aéreo</h1>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingrese nombre">
+        
+        <label for="destino">Destino:</label>
+        <input type="text" id="destino" placeholder="Ejemplo: París">
+        
+        <label for="asiento">Número de Asiento:</label>
+        <input type="number" id="asiento">
+
+        <label for="letra">Letra Asiento:</label>
+        <input type="text" id="letra">
+
+        <label for="tipo">Tipo de Ticket:</label>
+        <select id="tipo">
+            <option value="E">Ejecutivo</option>
+            <option value="T">Turista</option>
+        </select>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio">
+        <br>
+        <button onclick="generarTicket()">Generar Ticket</button>
+        <br>
+        <a href="../index.html" class="boton">Volver</a>
+        
+        <div id="resultado"></div>
+        
+    </div>
+    <div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

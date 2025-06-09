@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Dividida</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="izquierda">
+            <img src="img/avion2.png" alt="">
+            <br>
+            <h1 id="titulo"></h1>
+        </div>
+        <div class="derecha">
+            
+            <div class="texto">
+                <p>🔥Logica de negocios</p>
+
+                <p class="texto-justificado">Una aerolínea ha decidido realizar una nueva aplicación para gestionar la venta de sus tickets aéreos.<br>
+                Para esto se requiere crear un sistema que almacene información de sus tickets de vuelos.<br>                            
+                El Ticket debe tener el número de vuelo, el destino, el número asiento, la letra asiento, , el precio , el nombre
+                del cliente, los ticket se deben diferenciar por Ejecutivo o turista.<br>
+                Aparte de eso re requiere que se apliquen algunas reglas de negocio como:<br>
+                • El nombre del cliente debe tener un largo mínimo de 6 caracteres, en el caso contrario el nombre
+                deberá
+                decir: “NO ASIGNADO”.<br>
+                • El tipo de ticket debe ser ‘Ejecutivo’ o ‘Turista’, caso contrario de que no se especifique que tipo es
+                el ticket se guardara como ‘Turista’.<br>
+                • El precio debe ser positivo, caso contrario precio será 0.</p>
+            </div>
+
+            <br>
+
+            <div> 
+                <a href="appavion/index.html" class="boton">Ir a Ticket</a>
+                <a href="https://alonsocuevas.github.io/dev/" class="boton">Volver a Portafolio</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
