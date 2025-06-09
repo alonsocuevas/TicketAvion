@@ -1,0 +1,91 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+    background-image: url('img/fondo.png');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.izquierda, .derecha {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos para la izquierda */
+.izquierda {
+    /*background-color: #007bff; /* Azul */
+    color: white;
+}
+
+/* Estilos para la derecha */
+.derecha {
+    /*background-color: #ff5733; /* Naranja */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;
+    padding: 20px;
+}
+
+.derecha p {
+    max-width: 600px; /* Limita el ancho del texto */
+}
+
+.izquierda {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;
+}
+
+/* Ajustar tamaño de la imagen */
+.izquierda img {
+    width: 150px; /* Cambia el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción */
+    margin-bottom: 10px; /* Espacio entre la imagen y el título */
+}
+
+
+.boton {
+    display: inline-block;
+    margin-top: 20px; /* Espacio entre el texto y el botón */
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Quita el subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background 0.3s ease-in-out;
+}
+
+.boton:hover {
+    background-color: #0056b3; /* Efecto al pasar el mouse */
+}
+
+.texto {
+    border-radius: 40px;
+    background-color: rgba(148, 147, 147, 0.295);
+    backdrop-filter: blur(1px); /* Difuminado */
+    padding: 20px;
+    color: black;
+}
+
+.texto-justificado {
+    text-align: justify;
+}
