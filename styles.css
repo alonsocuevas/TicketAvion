@@ -6,6 +6,7 @@ body, html {
 
 .contenedor {
     display: flex;
+    flex-wrap: wrap;
     height: 100vh;
     background-image: url('img/fondo.png');
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
@@ -37,11 +38,13 @@ body, html {
     justify-content: center; /* Centra verticalmente */
     text-align: center;
     padding: 20px;
+    height: 100%; /* Asegurar que tome toda la altura */
 }
 
 .derecha p {
-    max-width: 600px; /* Limita el ancho del texto */
+    max-width: 250px; /* Limita el ancho del texto */
 }
+
 
 .izquierda {
     display: flex;
@@ -81,11 +84,40 @@ body, html {
 .texto {
     border-radius: 40px;
     background-color: rgba(148, 147, 147, 0.295);
-    backdrop-filter: blur(1px); /* Difuminado */
-    padding: 20px;
-    color: black;
+    backdrop-filter: blur(10px); /* Difuminado */
+    color: white;
+    width: 80%; /* Ajusta el ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+
 
 .texto-justificado {
     text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .izquierda, .derecha {
+        width: 100%;
+        flex: none;
+        padding: 20px;
+    }
+    
+    .izquierda img {
+        width: 100px;
+    }
+
+    .texto {
+        font-size: 18px;
+        max-width: 90%;
+    }
 }
