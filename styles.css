@@ -1,14 +1,14 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
+    background-image: url('img/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}    
 
 .contenedor {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
-    background-image: url('img/fondo.png');
+    min-height: auto;
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -39,10 +39,11 @@ body, html {
     text-align: center;
     padding: 20px;
     height: 100%; /* Asegurar que tome toda la altura */
+    max-width: 50vw; /* Ajusta el tamaño en pantallas grandes */
 }
 
 .derecha p {
-    max-width: 250px; /* Limita el ancho del texto */
+    max-width: 200%; /* Limita el ancho del texto */
 }
 
 
@@ -86,15 +87,15 @@ body, html {
     background-color: rgba(148, 147, 147, 0.295);
     backdrop-filter: blur(10px); /* Difuminado */
     color: white;
-    width: 80%; /* Ajusta el ancho */
+    max-width: 500px; /* Limita la expansión del texto */
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
 }
-
-
 
 .texto-justificado {
     text-align: justify;
@@ -119,5 +120,14 @@ body, html {
     .texto {
         font-size: 18px;
         max-width: 90%;
+    }
+
+    .derecha {
+        width: 90%;
+        max-width: none; /* Permite que el contenido fluya mejor */
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Centra los elementos correctamente */
+        align-items: center; /* Centra verticalmente */
     }
 }
