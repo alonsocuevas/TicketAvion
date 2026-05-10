@@ -1,75 +1,326 @@
-# AppAvion ✈️
+# ✈️ AppAvion - Sistema de Gestión de Tickets Aéreos
 
-[![Estado](https://img.shields.io/badge/estado-%20concluido-yellow)](#) [![Licencia](https://img.shields.io/badge/licencia-MIT-blue)](#LICENSE) [![Stack](https://img.shields.io/badge/stack-HTML%2C%20CSS%2C%20JS-orange)](#)
+Aplicación web desarrollada para gestionar la venta y generación de tickets aéreos mediante reglas de negocio específicas.
 
-Aplicación web para gestión de tickets de una aerolínea. Permite crear y validar tickets con información del vuelo y del cliente, aplicando reglas de negocio específicas según tipo de ticket.
+El sistema permite registrar información de vuelos y pasajeros, validando automáticamente distintos campos como nombre del cliente, tipo de ticket, precio y número de asiento.
 
----
-
-## 🎯 Funcionalidades
-
-- Visualización dinámica de título animado ("Ticket de Avión")  
-- Sistema de tickets que almacena:
-  - Número de vuelo  
-  - Destino  
-  - Número de asiento y letra  
-  - Precio  
-  - Nombre del cliente  
-  - Tipo de ticket: **Ejecutivo** o **Turista**  
-- Reglas de negocio implementadas:  
-  - Nombre del cliente mínimo 6 caracteres; si no cumple, se asigna "NO ASIGNADO"  
-  - Tipo de ticket por defecto: Turista  
-  - Precio negativo se ajusta a 0  
-- Interfaz amigable, responsiva y con fondo personalizado  
-- Botones de navegación: abrir aplicación de tickets o volver al portafolio  
+Proyecto desarrollado completamente con HTML, CSS y JavaScript puro.
 
 ---
 
-## Demo en línea
+# 📸 Vista General
 
-Disponible en GitHub Pages:  
-https://alonsocuevas.github.io/TicketAvion/appavion/index.html
+![](readme-img/ticket1.png)
+![](readme-img/ticket2.png)
+![](readme-img/ticket3.png)
+
+La aplicación permite:
+
+- Generar tickets aéreos
+- Validar datos del cliente
+- Aplicar reglas de negocio automáticamente
+- Visualizar tickets generados dinámicamente
+- Gestionar distintos tipos de tickets
 
 ---
 
-## Instalación y Uso
+# 🧠 Lógica de Negocio
 
-1. Clona el repositorio:  
+La aplicación fue desarrollada siguiendo las siguientes reglas:
+
+| Regla | Comportamiento |
+|---|---|
+| Nombre menor a 6 caracteres | Se asigna `"NO ASIGNADO"` |
+| Tipo inválido o vacío | Se asigna `"Turista"` |
+| Precio negativo | Se convierte en `0` |
+| Número de asiento fuera de rango | Se marca como inválido |
+
+---
+
+# 🎯 Funcionalidades
+
+- Generación dinámica de tickets
+- Validación automática de datos
+- Sistema de clases en JavaScript
+- Visualización personalizada del ticket
+- Interfaz moderna con efecto blur
+- Fondo temático de aviación
+- Navegación hacia portafolio principal
+- Diseño responsive
+
+---
+
+# 🛠️ Tecnologías Utilizadas
+
+## Frontend
+
+- HTML5
+- CSS3
+- JavaScript ES6
+
+---
+
+# ⚙️ Arquitectura del Proyecto
+
+El proyecto utiliza programación orientada a objetos mediante la clase:
+
+```javascript
+class Vuelo
+```
+
+La clase encapsula:
+
+- Validación de datos
+- Generación del ticket
+- Reglas de negocio
+- Formateo de información
+
+---
+
+# 📂 Estructura del Proyecto
+
+```bash
+TicketAvion/
+├── readme-img/
+├── img/
+├── index.html
+├── README.md
+├── script.js
+└── styles.css
+```
+
+---
+
+# ✈️ Datos Gestionados
+
+Cada ticket almacena:
+
+- Número de vuelo
+- Destino
+- Número de asiento
+- Letra de asiento
+- Tipo de ticket
+- Precio
+- Nombre del cliente
+
+---
+
+# 🎟️ Tipos de Ticket
+
+| Código | Tipo |
+|---|---|
+| `E` | Ejecutivo |
+| `T` | Turista |
+
+---
+
+# 🔍 Validaciones Implementadas
+
+## 👤 Nombre del Cliente
+
+```javascript
+validarNombreCliente(nombre)
+```
+
+- Mínimo 6 caracteres
+- Si no cumple:
+  
+```txt
+NO ASIGNADO
+```
+
+---
+
+## 💰 Precio
+
+```javascript
+validarPrecio(precio)
+```
+
+- No permite valores negativos
+- Valores inválidos → `0`
+
+---
+
+## 💺 Número de Asiento
+
+```javascript
+validarNumeroAsiento(asiento)
+```
+
+Rango permitido:
+
+```txt
+1 - 853
+```
+
+---
+
+## 🛫 Tipo de Ticket
+
+```javascript
+validarTipoTicket(tipo)
+```
+
+Valores válidos:
+
+- `E`
+- `T`
+
+Caso contrario:
+
+```txt
+Turista
+```
+
+---
+
+# 🎨 Diseño de Interfaz
+
+La interfaz incluye:
+
+- Fondo temático de aviación
+- Efecto Glassmorphism
+- Blur dinámico
+- Ticket visual estilizado
+- Botones interactivos
+- Inputs centrados y responsivos
+
+---
+
+# 📦 Instalación y Uso
+
+## 1️⃣ Clonar repositorio
+
 ```bash
 git clone https://github.com/alonsocuevas/TicketAvion.git
+```
+
+---
+
+## 2️⃣ Entrar al proyecto
+
+```bash
 cd TicketAvion/appavion
 ```
-2. Abre index.html en un navegador.
 
-3. Interactúa con la interfaz:
-
-- Observa la animación del título
-
-- Revisa la sección de lógica de negocio y tickets
-
-- Usa los botones para abrir la aplicación o volver al portafolio
 ---
-## Tecnologías
-- HTML5
 
-- CSS3
+## 3️⃣ Ejecutar
 
-- JavaScript (ES6)
+Abrir:
 
-- Animación de texto con JavaScript
+```bash
+index.html
+```
 
-- Diseño responsivo con efectos de blur y semitransparencia
+En cualquier navegador moderno.
+
 ---
-## Mejoras sugeridas
-- Implementar creación y edición de tickets desde la interfaz
 
-- Validación más avanzada de entradas
+# 🌐 Demo Online
 
-- Guardado persistente de tickets usando localStorage o base de datos
+Disponible en GitHub Pages:
 
-- Diseño de temas claros/oscuro dinámicos
+```txt
+https://alonsocuevas.github.io/TicketAvion/appavion/index.html
+```
 
-- Integración con sistema de pago o confirmación de tickets
 ---
-## Autor
-Alonso Cuevas Pizarro [![Mi GitHub](https://img.shields.io/badge/-GitHub-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alonsocuevas)
+
+# 🧪 Conceptos Aplicados
+
+Este proyecto permitió practicar:
+
+- Programación orientada a objetos
+- Validación de formularios
+- Manipulación del DOM
+- Reglas de negocio
+- Renderizado dinámico HTML
+- CSS moderno
+- Glassmorphism UI
+- Manejo de eventos
+
+---
+
+# 🔧 Dependencias
+
+Este proyecto no utiliza:
+
+- Node.js
+- npm
+- frameworks
+- backend
+- base de datos
+- variables de entorno
+
+Todo el sistema funciona mediante archivos estáticos.
+
+---
+
+# 📱 Compatibilidad
+
+Compatible con:
+
+- Google Chrome
+- Firefox
+- Edge
+- Brave
+- Opera
+
+---
+
+# 📈 Posibles Mejoras Futuras
+
+- Persistencia de tickets
+- Base de datos
+- Generación PDF
+- Tickets descargables
+- Sistema de autenticación
+- Gestión de vuelos
+- Panel administrativo
+- Integración backend
+- API REST
+
+---
+
+# 👨‍💻 Autor
+
+## Alonso Cuevas Pizarro
+
+Desarrollador Web Full Stack enfocado en:
+
+- JavaScript
+- React
+- Node.js
+- PostgreSQL
+- Desarrollo Frontend
+- Interfaces interactivas
+
+---
+
+# 🔗 Enlaces
+
+## 💻 GitHub
+
+```txt
+https://github.com/alonsocuevas
+```
+
+## 🌐 Portafolio
+
+```txt
+https://alonsocuevas.github.io/dev/
+```
+
+---
+
+# ✈️ Objetivo del Proyecto
+
+Proyecto desarrollado con fines educativos para practicar:
+
+- Validaciones
+- Reglas de negocio
+- Programación orientada a objetos
+- Desarrollo frontend
+- Simulación de sistemas reales de tickets aéreos

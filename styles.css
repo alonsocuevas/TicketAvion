@@ -1,67 +1,53 @@
-body, html {
-    background-image: url('img/fondo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}    
-
-.contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: auto;
-    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-.izquierda, .derecha {
-    flex: 1;
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Estilos para la izquierda */
-.izquierda {
-    /*background-color: #007bff; /* Azul */
-    color: white;
-}
-
-/* Estilos para la derecha */
-.derecha {
-    /*background-color: #ff5733; /* Naranja */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
+    height: 100vh;
+    background-image: url('img/mapa.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
     text-align: center;
     padding: 20px;
-    height: 100%; /* Asegurar que tome toda la altura */
-    max-width: 50vw; /* Ajusta el tamaño en pantallas grandes */
 }
 
-.derecha p {
-    max-width: 200%; /* Limita el ancho del texto */
+.container {
+    padding: 20px;
+    background: rgba(49, 49, 49, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.295);
+    backdrop-filter: blur(20px); /* Difuminado */
+    color: white
 }
 
-
-.izquierda {
-    display: flex;
-    flex-direction: column; /* Organiza los elementos en columna */
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
+input, select {
+    display: block;
+    width: 80%;
+    padding: 8px;
+    margin: 10px auto;
     text-align: center;
+   
+    font-weight: bold;
+    font-size: 20px;
 }
 
-/* Ajustar tamaño de la imagen */
-.izquierda img {
-    width: 150px; /* Cambia el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción */
-    margin-bottom: 10px; /* Espacio entre la imagen y el título */
+button {
+    background-color: #049196;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
 }
 
+button:hover {
+    background-color: #0056b3;
+}
 
 .boton {
     display: inline-block;
@@ -70,11 +56,11 @@ body, html {
     padding: 10px 20px;
     background-color: #007bff; /* Azul */
     color: white;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     text-decoration: none; /* Quita el subrayado */
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 10px; /* Bordes redondeados */
     transition: background 0.3s ease-in-out;
 }
 
@@ -82,52 +68,39 @@ body, html {
     background-color: #0056b3; /* Efecto al pasar el mouse */
 }
 
-.texto {
-    border-radius: 40px;
-    background-color: rgba(148, 147, 147, 0.295);
-    backdrop-filter: blur(10px); /* Difuminado */
+.ticket {
+    position: relative;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Capa semitransparente */
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    color: rgb(53, 52, 52);
+    font-weight: bold;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Pseudo-elemento que contendrá la imagen desenfocada */
+.ticket::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/ticket2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px); /* Difuminado real */
+    z-index: -1; /* Envía la imagen detrás */
+}
+
+::placeholder {
+    color: rgb(102, 101, 101);
+}
+
+label{
+    font-weight: bold;
     color: white;
-    max-width: 500px; /* Limita la expansión del texto */
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-.texto-justificado {
-    text-align: justify;
-}
-
-@media screen and (max-width: 768px) {
-    .contenedor {
-        flex-direction: column;
-        height: auto;
-    }
-    
-    .izquierda, .derecha {
-        width: 100%;
-        flex: none;
-        padding: 20px;
-    }
-    
-    .izquierda img {
-        width: 100px;
-    }
-
-    .texto {
-        font-size: 18px;
-        max-width: 90%;
-    }
-
-    .derecha {
-        width: 90%;
-        max-width: none; /* Permite que el contenido fluya mejor */
-        text-align: center;
-        display: flex;
-        justify-content: center; /* Centra los elementos correctamente */
-        align-items: center; /* Centra verticalmente */
-    }
 }
