@@ -201,7 +201,7 @@ git clone https://github.com/alonsocuevas/TicketAvion.git
 ## 2️⃣ Entrar al proyecto
 
 ```bash
-cd TicketAvion/appavion
+cd TicketAvion
 ```
 
 ---
@@ -223,7 +223,7 @@ En cualquier navegador moderno.
 Disponible en GitHub Pages:
 
 ```txt
-https://alonsocuevas.github.io/TicketAvion/appavion/index.html
+https://alonsocuevas.github.io/TicketAvion/
 ```
 
 ---
